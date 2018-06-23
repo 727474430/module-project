@@ -1,0 +1,15 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wxapp?useUnicode=true&charsetEncoding=utf8&useSSL=false
+    username: root
+    password: q84518936
+  application:
+    name: module-project
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.raindrop.module.entity
+server:
+  port: 8088

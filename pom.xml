@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- 基本信息 -->
+    <description>Spring Boot Module Learning</description>
+    <modelVersion>4.0.0</modelVersion>
+    <name>module-project</name>
+    <packaging>pom</packaging>
+
+    <!-- 父工程版本信息 -->
+    <groupId>com.raindrop</groupId>
+    <artifactId>module-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- SpringBoot Parent依赖只在父工程中添加 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 通用配置 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <!-- 模块信息 -->
+    <modules>
+        <module>module-web</module>
+        <module>module-service</module>
+        <module>module-core</module>
+        <module>module-common</module>
+    </modules>
+
+    <!-- 子模块版本信息 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.raindrop</groupId>
+                <artifactId>module-web</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.raindrop</groupId>
+                <artifactId>module-service</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.raindrop</groupId>
+                <artifactId>module-core</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.raindrop</groupId>
+                <artifactId>module-common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
