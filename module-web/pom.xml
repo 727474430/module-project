@@ -37,6 +37,12 @@
             <artifactId>module-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!-- Web Logging -->
+        <dependency>
+            <groupId>com.raindrop</groupId>
+            <artifactId>web-logging-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!-- Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -108,19 +114,12 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.yml</include>
-                    <include>**/*.xml</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-            <resource>
                 <directory>src/main/resources</directory>
                 <filtering>false</filtering>
                 <includes>
                     <include>**/*.yml</include>
                     <include>**/*.xml</include>
+                    <include>security/**</include>
                 </includes>
             </resource>
         </resources>

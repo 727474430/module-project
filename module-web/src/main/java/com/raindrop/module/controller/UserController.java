@@ -1,5 +1,6 @@
 package com.raindrop.module.controller;
 
+import com.raindrop.anno.WebLogging;
 import com.raindrop.module.entity.User;
 import com.raindrop.module.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ public class UserController {
 	 *
 	 * @return
 	 */
+	@WebLogging(description = "用户列表查询")
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<User> index() {
 		return userService.listAll();
@@ -39,6 +41,7 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
+	@WebLogging(description = "通过主键查询用户")
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public User get(@PathVariable("id") Long id) {
 		return userService.selectOne(id);
@@ -50,6 +53,7 @@ public class UserController {
 	 * @param user
 	 * @return
 	 */
+	@WebLogging(description = "新增用户")
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public User add(User user) {
 		userService.add(user);
@@ -74,6 +78,7 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
+	@WebLogging(description = "通过主键删除用户")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public String delete(@PathVariable("id") Long id) {
 		int row = userService.delete(id);

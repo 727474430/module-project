@@ -13,3 +13,8 @@ mybatis:
   type-aliases-package: com.raindrop.module.entity
 server:
   port: 8088
+  ssl:
+    key-store: classpath:security/keystore.p12
+    key-alias: module
+    key-store-type: PKCS12
+    key-store-password: q84518936
